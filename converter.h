@@ -54,7 +54,7 @@ string OpenSaveFileDialog(const string& defaultFileName, const string& fileExten
 }
 
 // Image conversion function
-void konversiGambar(const string& base64Data, const string& defaultOutputName, const string& format) {
+void ConvertImage(const string& base64Data, const string& defaultOutputName, const string& format) {
     int width, height, channels;
     unsigned char* data = nullptr;
     
@@ -121,4 +121,5 @@ void konversiGambar(const string& base64Data, const string& defaultOutputName, c
 }
 
 #endif // CONVERTER_H
+
 
