@@ -197,7 +197,7 @@ New folder/
 Open **Developer Command Prompt for VS 2022** and run:
 
 ```bash
-cd "C:\Users\rev01\Downloads\C++\PROJECT C++ KONVERSI GAMBAR (APLIKASI DEKSTOP)\New folder"
+cd "C:\C++ PROJECT"
 
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe" ^
 /EHsc /W4 /Zi /std:c++17 /DUNICODE /D_UNICODE /MD main.cpp ^
