@@ -124,7 +124,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 
 // ====== Main function ======
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow) {
-    const wchar_t * CLASS_NAME = L"KonversiGambarApp";
+    const wchar_t * CLASS_NAME = L"ConvertImageApp";
     
     WNDCLASSW wc = {};
     wc.lpfnWndProc = WindowProc;
