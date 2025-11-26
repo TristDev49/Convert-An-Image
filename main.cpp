@@ -85,15 +85,19 @@ void InisialisasiWebView(HWND hWnd) {
                                         wstring wmsg(message.get());
                                         string msg(wmsg.begin(), wmsg.end());
 
-                                        // Message format from JS: input|output
-                                        size_t pos = msg.find('|');
-                                        if (pos != string::npos) {
-                                            string input = msg.substr(0, pos);
-                                            string output = msg.substr(pos + 1);
-                                            konversiGambar(input, output);
+                                        // Format: base64Data|outputFileName|format
+                                        size_t pos1 = msg.find('|'); 
+                                        if (pos1 != string::npos) {
+                                            size_t pos2 = msg.find('|', pos1 + 1); 
+                                            if (pos2 != string::npos) {
+                                                string base64Data = msg.substr(0, pos1);
+                                                string outputFileName = msg.substr(pos1 + 1, pos2 - pos1 - 1);
+                                                string format = msg.substr(pos2 + 1);
+                                                
+                                                cout << "[Debug] Output: " << outputFileName << ", Format: " << format << endl;
+                                                konversiGambar(base64Data, outputFileName, format);
+                                            }
                                         }
-                                        return S_OK;
-                                    })
                                     .Get(),
                                 &token);
 
