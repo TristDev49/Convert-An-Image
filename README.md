@@ -6,16 +6,16 @@ A desktop application built with C++ and WebView2 that converts images between d
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [File Descriptions](#file-descriptions)
-- [How to Build](#how-to-build)
-- [How to Run](#how-to-run)
-- [How It Works](#how-it-works)
-- [Learning Resources](#learning-resources)
-- [Troubleshooting](#troubleshooting)
+- [Microsoft WebView2 SDK](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) - Official WebView2 documentation and downloads
+- [STB Image Library](https://github.com/nothings/stb) - Single-file public domain image loading library
+- [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/) - C++ compiler and build tools
+- [WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section) - Required runtime for WebView2 applications
+- [MSVC Compiler Documentation](https://docs.microsoft.com/en-us/cpp/) - Microsoft C++ documentation
+- [STB Image Documentation](https://github.com/nothings/stb/blob/master/stb_image.h) - STB image header file and usage
+- [Base64 Encoding Reference](https://en.cppreference.com/w/cpp) - C++ reference documentation
+- [Windows API Documentation](https://docs.microsoft.com/en-us/windows/win32/) - Windows API reference
+- [WebView2 Samples](https://github.com/MicrosoftEdge/WebView2Samples) - Official WebView2 sample projects
+- [CMake Documentation](https://cmake.org/documentation/) - Build system documentation
 
 ---
 
