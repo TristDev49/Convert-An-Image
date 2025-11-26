@@ -73,7 +73,7 @@ void InisialisasiWebView(HWND hWnd) {
                             SetWebViewBounds(hWnd);
 
                             // Navigate to HTML file
-                            webview->Navigate(L"file:///C:/Users/rev01/Downloads/C++/PROJECT%20C++%20KONVERSI%20GAMBAR%20(APLIKASI%20DEKSTOP)/index.html");
+                            webview->Navigate(L"file:///C:/path/to/your/index.html");
 
                             // Capture messages from JavaScript
                             EventRegistrationToken token;
