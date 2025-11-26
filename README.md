@@ -356,10 +356,8 @@ This is a learning project. Feel free to:
 
 ---
 
-## 📧 Contact
+## 📝 Note
 
-For questions or discussions about this educational project, please open an issue in the repository.
+This program is intended only for learning purposes, you are allowed to change, access, use, modify, and distribute the source code of this software freely, I do not provide all the source code that I have created but from some of this code you can modify it as you wish.
 
 ---
-
-**Happy Learning! 🎓**
