@@ -28,7 +28,7 @@ static void SetWebViewBounds(HWND hWnd) {
 }
 
 // ====== Image conversion function ======
-void konversiGambar(const string& input, const string& output) {
+void convertImage(const string& input, const string& output) {
     int width, height, channels;
     unsigned char* data = stbi_load(input.c_str(), &width, &height, &channels, 0);
 
@@ -55,7 +55,7 @@ void konversiGambar(const string& input, const string& output) {
 }
 
 // ====== WebView initialization function ======
-void InisialisasiWebView(HWND hWnd) {
+void InitializeWebView(HWND hWnd) {
     CreateCoreWebView2EnvironmentWithOptions(
         nullptr, nullptr, nullptr,
         Callback<ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler>(
@@ -85,19 +85,15 @@ void InisialisasiWebView(HWND hWnd) {
                                         wstring wmsg(message.get());
                                         string msg(wmsg.begin(), wmsg.end());
 
-                                        // Format: base64Data|outputFileName|format
-                                        size_t pos1 = msg.find('|'); 
-                                        if (pos1 != string::npos) {
-                                            size_t pos2 = msg.find('|', pos1 + 1); 
-                                            if (pos2 != string::npos) {
-                                                string base64Data = msg.substr(0, pos1);
-                                                string outputFileName = msg.substr(pos1 + 1, pos2 - pos1 - 1);
-                                                string format = msg.substr(pos2 + 1);
-                                                
-                                                cout << "[Debug] Output: " << outputFileName << ", Format: " << format << endl;
-                                                konversiGambar(base64Data, outputFileName, format);
-                                            }
+                                        // Message format from JS: input|output
+                                        size_t pos = msg.find('|');
+                                        if (pos != string::npos) {
+                                            string input = msg.substr(0, pos);
+                                            string output = msg.substr(pos + 1);
+                                            convertImage(input, output);
                                         }
+                                        return S_OK;
+                                    })
                                     .Get(),
                                 &token);
 
@@ -124,7 +120,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 
 // ====== Main function ======
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow) {
-    const wchar_t * CLASS_NAME = L"ConvertImageApp";
+    const wchar_t * CLASS_NAME = L"ImageConverterApp";
     
     WNDCLASSW wc = {};
     wc.lpfnWndProc = WindowProc;
@@ -142,7 +138,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow) {
 
     ShowWindow(hWnd, nCmdShow);
 
-    InisialisasiWebView(hWnd);
+    InitializeWebView(hWnd);
 
     MSG msg = {};
     while (GetMessage(&msg, nullptr, 0, 0)) {

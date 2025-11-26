@@ -99,9 +99,9 @@ New folder/
 **Key Components**:
 - `wWinMain()`: Windows application entry point
 - `WindowProc()`: Handles window messages (resize, close, etc.)
-- `InisialisasiWebView()`: Initializes Microsoft Edge WebView2 control
+- `InitializeWebView()`: Initializes Microsoft Edge WebView2 control
 - `SetWebViewBounds()`: Manages WebView2 sizing within the window
-- `konversiGambar()`: Basic image conversion function (legacy)
+- `convertImage()`: Basic image conversion function (legacy)
 
 **What you'll learn**:
 - Creating Windows desktop applications
@@ -116,7 +116,7 @@ New folder/
 
 **Key Functions**:
 - `OpenSaveFileDialog()`: Opens Windows native Save File Dialog
-- `konversiGambar()`: Main conversion function that:
+- `ConvertImage()`: Main conversion function that:
   - Decodes base64 image data
   - Loads image using STB library
   - Opens save dialog for user to choose output location
@@ -356,8 +356,10 @@ This is a learning project. Feel free to:
 
 ---
 
-## 📝 Note
+## 📧 Contact
 
-This program is intended only for learning purposes, you are allowed to change, access, use, modify, and distribute the source code of this software freely, I do not provide all the source code that I have created but from some of this code you can modify it as you wish.
+For questions or discussions about this educational project, please open an issue in the repository.
 
 ---
+
+**Happy Learning! 🎓**

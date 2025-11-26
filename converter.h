@@ -40,7 +40,7 @@ string OpenSaveFileDialog(const string& defaultFileName, const string& fileExten
     ofn.nMaxFile = sizeof(szFile);
     ofn.lpstrFilter = filter.c_str();
     ofn.nFilterIndex = 1;
-    ofn.lpstrTitle = "Simpan File Hasil Konversi";
+    ofn.lpstrTitle = "Save File Conversion Result";
     ofn.Flags = OFN_PATHMUSTEXIST | OFN_OVERWRITEPROMPT;
     
     if (GetSaveFileNameA(&ofn)) {
@@ -121,5 +121,4 @@ void ConvertImage(const string& base64Data, const string& defaultOutputName, con
 }
 
 #endif // CONVERTER_H
-
 
