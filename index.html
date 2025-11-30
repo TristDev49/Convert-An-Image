@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Konversi Gambar</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <h1>🖼️ Konversi Gambar</h1>
+  <input type="file" id="inputFile" accept="image/*">
+  <select id="format">
+    <option value="png">PNG</option>
+    <option value="jpg">JPG</option>
+    <option value="bmp">JPEG</option>
+  </select>
+  <button id="convertBtn">Konversi</button>
+  <p id="status"></p>
+
+  <script>
+    const btn = document.getElementById('convertBtn');
+    btn.onclick = () => {
+      const file = document.getElementById('inputFile').files[0];
+      const fmt  = document.getElementById('format').value;
+      if (!file) return alert('Pilih gambar dulu!');
+      window.chrome.webview.postMessage({ filePath: file.name, format: fmt });
+      document.getElementById('status').innerText = 'Memproses...';
+    };
+
+    // menerima pesan balik dari C++
+    window.chrome.webview.addEventListener('message', e => {
+      document.getElementById('status').innerText = e.data;
+    });
+  </script>
+</body>
+</html>
